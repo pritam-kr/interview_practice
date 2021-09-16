@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <input id="input_text" type="text">
+        <br>
+        <button id="btn-plus">+</button> <button id="btn-minus">-</button>
+    </form>
+
+    <p id="message"></p>
+    <script>
+        // Create a web app where I can input a text. Now create two buttons + and -. On clicking + increase the fontSize by 2px and vice versa.
+
+        const btnPlus = document.querySelector('#btn-plus')
+        const btnMinus = document.querySelector('#btn-minus')
+        const btn = document.querySelectorAll('button')
+        const inputText = document.querySelector('#input_text')
+        const mess = document.querySelector('#message')
+        var size = 20;
+
+        btn.forEach((eachBtn) =>{
+            eachBtn.addEventListener('click' ,(e) =>{
+                
+                e.preventDefault()
+
+                var inputValue = inputText.value;
+
+                if(e.target.textContent ==="+"){
+                    size = size + 2
+                    mess.innerHTML = inputValue
+                    mess.style.fontSize = size + 'px'
+                }else if(e.target.textContent ==="-"){
+                    size = size - 2
+                    mess.innerHTML = inputValue
+                    mess.style.fontSize = size + 'px'
+                }
+
+            })
+        })
+    </script>
+</body>
+</html>

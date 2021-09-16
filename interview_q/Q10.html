@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <p id="err-mess"></p>
     <script>
-        // Here's an API, it can give two errors. Either 404, or 401. If the error is 404, show the user 'page not found' and if the error is 401, show the user 'you are not logged in'.
+      // Here's an API, it can give two errors. Either 404, or 401. If the error is 404, show the user 'page not found' and if the error is 401, show the user 'you are not logged in'.
 
-        fetch("https://api.funtranslations.com/translate/prate.json")
-        .then((res) =>{
-            if(res.status === 404){
-                throw Error(`${res.status} - Page not found`)
-            }else if(res.status === 401){
-                throw Error(`${res.status} - User not logged in`)
-            }else{
-                return res.json()
-            }
+      fetch("https://api.funtranslations.com/translate/prate.json")
+        .then((res) => {
+          if (res.status === 404) {
+            throw Error(`${res.status} - Page not found`);
+          } else if (res.status === 401) {
+            throw Error(`${res.status} - User not logged in`);
+          } else {
+            return res.json();
+          }
         })
-        .then((data) =>{
-            console.log(data)
+        .then((data) => {
+          console.log(data);
         })
-        .catch((err) =>{
-            document.querySelector('#err-mess').innerHTML = err;
-        })
-
+        .catch((err) => {
+          document.querySelector("#err-mess").innerHTML = err;
+        });
     </script>
-</body>
+  </body>
 </html>
