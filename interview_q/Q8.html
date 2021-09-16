@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <input type="text" id="input_text"><br>
+        <button id="btn-check">Check</button>
+    </form>
+ <p id="translated"></p>
+    <script>
+        // Here's an API. Create a web app to call this API with your full name and print the response. This could be extended where we ask you to do something with the response. Like add a text, or capitalise etc.
+
+        const btnCheck = document.querySelector('#btn-check')
+        const inputText = document.querySelector('#input_text')
+
+
+        btnCheck.addEventListener('click', (e) =>{
+            e.preventDefault()
+
+            var inputTextValue = inputText.value;
+
+            fetch(`https://api.funtranslations.com/translate/yoda.json?text=${inputTextValue}`)
+            .then((res) =>{
+                return res.json()
+            })
+            .then((data) =>{
+                document.querySelector('#translated').innerHTML = data.contents.translated.toUpperCase()
+            })
+        })
+
+    </script>
+</body>
+</html>
