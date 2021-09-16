@@ -1,0 +1,35 @@
+<!-- Create a password checker web app. If password is lesser than 10 characters then show an error to user otherwise show success. Someone can ask to make the submit button disabled. Some can ask to make the input field green or red depending on input. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn-passcheck{
+            display: none;
+        }
+        #input-password{
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="password" id="input-password" /> <button id="btn-passcheck">Check</button>
+    </form>
+    <script>
+        const inputPassowrd = document.querySelector('#input-password')
+        const btnCheck = document.querySelector('#btn-passcheck')
+
+       inputPassowrd.addEventListener('input', (e) =>{
+           var inputPass = e.target.value
+           if(inputPass.length >= 10){
+               btnCheck.style.display = 'block'
+               inputPassowrd.style.border = '2px solid green'
+           }
+       })
+    </script>
+</body>
+</html>
