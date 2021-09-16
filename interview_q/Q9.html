@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="err-mess"></p>
+    
+    <script>
+        // Here's an API. It will give an error. Write a web app, call this API and read the error message. Show user the error message.
+
+        fetch('https://reqres.in/api/users/23')
+        
+        .then((res) =>{
+           if(res.ok == false){
+               throw Error(`Error occured with this API and response status is ${res.status}`)
+           }else{
+               return res.json()
+           }
+        })
+        .then((data) =>{
+            console.log(data)
+        })
+        .catch((err) =>{
+            document.querySelector('#err-mess').innerHTML = err;
+        })
+
+    </script>
+</body>
+</html>
