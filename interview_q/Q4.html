@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="neo">neogcamp</h1>
+
+    <button id="h-one">h1</button>
+    <button id="h-two">h2</button>
+    <button id="h-three">h3</button>
+    <script>
+        // Create a web app where I can input a text. Now, create three buttons h1, h2, h3. When I click on any of the button, the text should become h1, h2, or h3.
+
+        var h1 = 32
+        var h2 = 24
+        var h3 = 18.74
+
+        const neo = document.querySelector('#neo')
+        const btn = document.querySelectorAll('button')
+
+        btn.forEach((eachBtn) =>{
+            eachBtn.addEventListener('click', (e) =>{
+                if(e.target.textContent === 'h1'){
+                    neo.style.fontSize = h1 + 'px'
+                }else if(e.target.textContent === 'h2'){
+                    neo.style.fontSize = h2 + 'px'
+                }else{
+                    neo.style.fontSize = h3 + 'px'
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>
