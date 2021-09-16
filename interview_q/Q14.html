@@ -1,0 +1,46 @@
+<!-- Create color variables in CSS. Two colors: primary and secondary. Now make your h1 of primary color, h2 of secondary color. Make two buttons, primary and secondary using the same color. Can you also set a font from Google Font? -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root{
+            --primary-color: rgb(48, 111, 228);
+            --secondary-color: rgba(68, 68, 68, 0.103);
+        }
+        button{
+            margin: 10px;
+            cursor: pointer;
+        }
+        #primary-button{
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 30px;
+            border: 1px solid;
+        }
+        #primary-button:active{
+            background-color: rgb(36, 98, 212);
+        }
+        #secondary-button{
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 10px 30px;
+            border: 1px solid var(--primary-color);
+        }
+        #secondary-button:active{
+            background-color: rgba(68, 68, 68, 0.13);
+        }
+    </style>
+</head>
+<body>
+    
+    <button id="primary-button">Primary</button>
+    <button id="secondary-button">Secondary</button>
+
+</body>
+</html>
