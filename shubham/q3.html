@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="data">
+
+    </div>
+    <script>
+        // Here’s an API. Fetch the name and gender of user and show them on the web page. Now check weather the user is male or female. If the user is a female, show the name in pink colour. API - https://randomuser.me/api/?results=10
+
+        fetch('https://randomuser.me/api/?results=10')
+            .then((res) => {
+                return res.json()
+            })
+            .then((data) => {
+                var user = ''
+                data.results.forEach((eachUser) => {
+                    // console.log(eachUser.name.first)
+                    // console.log(eachUser.gender)
+
+                    if (eachUser.gender === "female") {
+                        var color = "pink"
+                    }
+
+                    user += `
+                    
+                    <h1 class="name" style="color: ${color};">${eachUser.name.first}</h1> <small style="color: ${color};">${eachUser.gender}</small>
+
+                    `
+                    document.querySelector('.data').innerHTML = user
+                })
+            })
+    </script>
+</body>
+
+</html>

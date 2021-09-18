@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo rerum error ex, nesciunt vitae voluptates natus
+        reprehenderit ipsam eveniet dolor.</p>
+
+    <button id="btn-plus">+</button> <button id="btn-minus">-</button>
+
+    <script>
+        // Put a paragraph on web with 16px font size. Now Increase the font size by 4px and vice-versa with the help of two buttons. Now change the colour of paragraph to RED when font size is divisible by 5
+
+        const paraGraph = document.querySelector('p')
+        const btn = document.querySelectorAll('button')
+
+        var size = 16
+
+        btn.forEach((eachBtn) => {
+            eachBtn.addEventListener('click', (e) => {
+                if (size % 5 === 0) {
+                    paraGraph.style.color = 'red'
+                } else {
+                    paraGraph.style.color = 'black'
+                }
+
+                if (e.target.textContent === '+') {
+                    size = size + 4
+                    paraGraph.style.fontSize = size + 'px'
+                } else {
+                    size = size - 4
+                    paraGraph.style.fontSize = size + 'px'
+                }
+            })
+        })
+
+    </script>
+</body>
+
+</html>

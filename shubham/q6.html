@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark{
+            background-color: rgb(49, 49, 49);
+            color: #fff;
+            transition: 0.2s all;
+        }
+        .container{
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+        button{
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <button class="toggle">Toggle</button>
+    </div>
+
+    <script>
+        document.querySelector('button').addEventListener('click', (e) =>{
+            document.querySelector('.container').classList.toggle('dark')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="input_text">
+        <button class="btn-click">Click</button>
+    </form>
+    <p></p>
+    <script>
+        const inputText = document.querySelector('#input_text')
+        document.querySelector('.btn-click').addEventListener('click', (e) =>{
+            e.preventDefault()
+
+            var inputValue = inputText.value.split('').reverse('').join('')
+            document.querySelector('p').innerHTML = inputValue
+        })
+        // Create a web app where I can input a text. Now reverse the text and on clicking the button, show the output.
+    </script>
+</body>
+</html>

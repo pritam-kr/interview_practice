@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="password"> <button id="btn-show">Show</button>
+    </form>
+    <script>
+        // Create a password checker. When char goes above 10, input should become green. Now create a button. On clicking the button, show/hide the password. ( change ......... to text and vice versa. ) HINT - you need to change the type of input field.
+
+        const btn = document.querySelector('#btn-show')
+        const passs = document.querySelector('input')
+
+        passs.addEventListener('input', (e) => {
+            var password = e.target.value;
+
+            if (password >= 10) {
+                passs.style.border = '1px solid green'
+            } else {
+                passs.style.border = '1px solid'
+            }
+        })
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
+            if(passs.getAttribute('type') === 'password'){
+                passs.setAttribute('type', 'text')
+            }else{
+                passs.setAttribute('type', 'password')
+            }
+        })
+
+    </script>
+</body>
+
+</html>

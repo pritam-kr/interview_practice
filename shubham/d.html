@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            border: 3px solid black;
+            outline: none;
+            padding: 1rem;
+        }
+    </style>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <form action="" onsubmit="return false">
+        <input type="password" placeholder="Enter your password here" id="user-pass">
+        <button id="btn-toggle">Show/Hide</button>
+    </form>
+
+    <script>
+        let userInput = document.querySelector("#user-pass");
+        let btnToggle = document.querySelector("#btn-toggle");
+
+        userInput.addEventListener('keyup', () => {
+            let userPassword = userInput.value;
+            if (userPassword.length >= 10) {
+                userInput.style.borderColor = "green";
+            }
+            else {
+                userInput.style.borderColor = "black";
+
+            }
+        })
+        btnToggle.addEventListener('click', () => {
+
+            if (userInput.getAttribute('type') === 'text') {
+                userInput.setAttribute('type', 'password');
+            }
+            else {
+
+                userInput.setAttribute('type', 'text');
+            }
+        })
+    </script>
+</body>
+
+</html>
