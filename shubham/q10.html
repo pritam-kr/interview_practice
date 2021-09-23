@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>0</h1>
+    <button id="btn-increase">Increase</button>
+    <button id="btn-decrease">Decrease</button>
+
+
+    <script>
+        // Another question: // You have to create a counter.
+        // Create two buttons + and -. On clicking the + button increment the counter. Similarly for -.  // Now highlight the counter:
+        // i. If the counter value is multiple of 3 then highlight the counter with Red colour.
+        // ii. If the counter value is multiple of 5 then highlight it with Green colour.
+        // iii. If the counter value is multiple of both 5 and 3 then highlight it with Yellow colour.
+
+        const btn = document.querySelectorAll('button')
+        const counter = document.querySelector('h1')
+        var cou = 0;
+
+        btn.forEach((eachBtn) => {
+            eachBtn.addEventListener('click', (e) => {
+                e.preventDefault()
+                if (e.target.textContent === "Increase") {
+                    cou = cou + 1
+
+                    counter.innerHTML = cou;
+                } else if (e.target.textContent === "Decrease") {
+                    cou = cou - 1;
+                    counter.innerHTML = cou;
+                }
+
+                if (cou % 3 == 0) {
+                    counter.style.color = 'red'
+                } else if (cou % 5 == 0) {
+                    counter.style.color = 'green'
+                } else if (cou % 5 == 0 || cou % 3 == 0) {
+                    counter.style.color = 'yellow'
+                }
+                else {
+                    counter.style.color = 'black'
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
