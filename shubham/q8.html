@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>0</h1>
+    <button id="btn-increase">Increase</button>
+    <button id="btn-decrease">Decrease</button>
+    <button id="btn-reset">Reset</button>
+    <script>
+        const btn = document.querySelectorAll('button')
+        const counter = document.querySelector('h1')
+
+        var cou = 0;
+
+        btn.forEach((eachBtn) =>{
+            eachBtn.addEventListener('click', (e) =>{
+                e.preventDefault()
+                if(e.target.textContent === "Increase"){
+                 cou = cou + 1
+                    counter.innerHTML = cou;
+                }else if(e.target.textContent === "Decrease"){
+                    cou = cou - 1;
+                    counter.innerHTML = cou;
+                }else{
+                    cou = 0;
+                    counter.innerHTML = cou;
+                }
+            })
+        })
+
+      
+
+    </script>
+</body>
+</html>
