@@ -31,19 +31,18 @@
                 e.preventDefault()
                 if (e.target.textContent === "Increase") {
                     cou = cou + 1
-
                     counter.innerHTML = cou;
                 } else if (e.target.textContent === "Decrease") {
                     cou = cou - 1;
                     counter.innerHTML = cou;
                 }
-
-                if (cou % 3 == 0) {
-                    counter.style.color = 'red'
-                } else if (cou % 5 == 0) {
-                    counter.style.color = 'green'
-                } else if (cou % 5 == 0 || cou % 3 == 0) {
+                if (cou % 3 === 0 && cou % 5 === 0) {
                     counter.style.color = 'yellow'
+                }
+                else if (cou % 3 === 0) {
+                    counter.style.color = 'red'
+                } else if (cou % 5 === 0) {
+                    counter.style.color = 'green'
                 }
                 else {
                     counter.style.color = 'black'
