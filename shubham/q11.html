@@ -6,14 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .upper{
+            text-transform: uppercase;
+        }
+        .lower{
+            text-transform: lowercase;
+        }
+        .capital{
+            text-transform: capitalize;
+        }
+    </style>
 </head>
 
 <body>
 
-    <script>
-//          Create a web app where I can input a text.Now, create three buttons h1, h2, h3.When I click on any of the button, the text should become h1, h2, or h3.
-//  Then create a fetch button.when clicked it should take the input text that is been display as the output of part 1. and then display the translation is the same area.
+    <input type="text" id="input_text">
+    <button id="btn-upper">Upper</button>
+    <button id="btn-lower">Lower</button>
+    <button id="btn-capital">Capital</button>
 
+    <div id="result"></div>
+    <script>
+// You have to create a text field and three button. // Suppose your input text is github. ,// On clicking the first button the text should become like this GITHUB. // On clicking the second button the text should become like this Github. // On clicking the third button the text should become like this github.
+
+        const inputText = document.querySelector('#input_text')
+        const btn = document.querySelectorAll('button')
+        const result = document.querySelector('#result')
+        btn.forEach((eachBtn) =>{
+            eachBtn.addEventListener('click', (e) =>{
+                e.preventDefault()
+
+                var inputValue = inputText.value;
+
+                if(e.target.textContent === "Upper"){
+                    result.innerHTML = inputValue;
+                    result.classList.add('upper')
+                }else if(e.target.textContent === "Lower"){
+                    result.innerHTML = inputValue;
+                    result.classList.add('lower')
+                }else if(e.target.textContent === "Capital"){
+                    result.innerHTML = inputValue;
+                    result.classList.add('capital')
+                }
+            })
+        })
     </script>
 </body>
 
