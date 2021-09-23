@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <input type="number" id="first_number">
+        <input type="number" id="second_number">
+        <input type="text" id="third_input">
+        <button>Check</button>
+    </form>
+
+    <h1 id="result"></h1>
+
+    <script>
+        //You need to create three input fields and an output field. 
+        // First, two input fields will take numbers as input. The last input field will take the operator as input. // Operators are +, -, × and /. If the third input field value is + then show in the output field the sum of the first input value + second input value. Similarly, if we enter  ×, - and / in the third input field. // Note: Button is not required.  for this question: limit the last input field to take only +,-,× and /. Show error if user gives any other input.
+
+        const firstNum = document.querySelector('#first_number')
+        const secondNum = document.querySelector('#second_number')
+        const airthematicSign = document.querySelector('#third_input')
+        const outPut = document.querySelector('#result')
+
+        document.querySelector('button').addEventListener('click', (e) => {
+            e.preventDefault()
+            var firstNumber = Number(firstNum.value);
+            var secondNumber = Number(secondNum.value);
+
+            var calculation = checkAirth(airthematicSign.value, firstNumber, secondNumber)
+            if (calculation === undefined) {
+                calculation = "Please enter the value"
+            }
+            outPut.innerHTML = calculation
+        })
+
+        function checkAirth(sign, numOne, numTwo) {
+            if (sign === "+") {
+                var sum = numOne + numTwo;
+                return sum
+            } else if (sign === "-") {
+                var minus = numOne - numTwo;
+                return minus
+            } else if (sign === "*") {
+                var multi = numOne * numTwo;
+                return multi
+            } else if (sign === "/") {
+                var divi = numOne / numTwo;
+                return divi
+            } else {
+
+                outPut.innerHTML = 'enter valid input'
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
