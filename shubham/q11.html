@@ -6,18 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <style>
-        .upper{
-            text-transform: uppercase;
-        }
-        .lower{
-            text-transform: lowercase;
-        }
-        .capital{
-            text-transform: capitalize;
-        }
-    </style>
 </head>
 
 <body>
@@ -29,26 +17,26 @@
 
     <div id="result"></div>
     <script>
-// You have to create a text field and three button. // Suppose your input text is github. ,// On clicking the first button the text should become like this GITHUB. // On clicking the second button the text should become like this Github. // On clicking the third button the text should become like this github.
+        // You have to create a text field and three button. // Suppose your input text is github. ,// On clicking the first button the text should become like this GITHUB. // On clicking the second button the text should become like this Github. // On clicking the third button the text should become like this github.
 
         const inputText = document.querySelector('#input_text')
         const btn = document.querySelectorAll('button')
         const result = document.querySelector('#result')
-        btn.forEach((eachBtn) =>{
-            eachBtn.addEventListener('click', (e) =>{
+        btn.forEach((eachBtn) => {
+            eachBtn.addEventListener('click', (e) => {
                 e.preventDefault()
 
                 var inputValue = inputText.value;
 
-                if(e.target.textContent === "Upper"){
+                if (e.target.textContent === "Upper") {
                     result.innerHTML = inputValue;
-                    result.classList.add('upper')
-                }else if(e.target.textContent === "Lower"){
+                    result.style.textTransform = 'uppercase'
+                } else if (e.target.textContent === "Lower") {
+                    result.style.textTransform = 'lowercase'
                     result.innerHTML = inputValue;
-                    result.classList.add('lower')
-                }else if(e.target.textContent === "Capital"){
+                } else if (e.target.textContent === "Capital") {
+                    result.style.textTransform = 'capitalize'
                     result.innerHTML = inputValue;
-                    result.classList.add('capital')
                 }
             })
         })
