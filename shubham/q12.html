@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+        <style>
+            input:focus{
+                background-color: yellow;
+            }
+        </style>
+</head>
+<body>
+
+    <input id="password" type="password"> <button id="btn_show_hide"><i class="fas fa-eye"></i> </button>
+    
+    <script>
+        // Create a password checker. When char goes above 10, input border should become green. Now create a button. On clicking the button, show/hide the password. ( change ......... to text and vice versa. ) HINT - you need to change the type of input field...........for this question, it works only when the cursor is outside of the input field, when cursor inside its yellow, how to change that?
+
+        const inputField = document.querySelector('#password')
+        const btn = document.querySelector('#btn_show_hide')
+
+        inputField.addEventListener('input', (e) =>{
+            if(e.target.value.length >= 10){
+                inputField.style.border = '2px solid green'
+            }
+        })
+
+        btn.addEventListener('click', (e) =>{
+            var getA = inputField.getAttribute('type')
+            if(getA === 'password'){
+                inputField.setAttribute('type', 'text')
+            }else{
+                inputField.setAttribute('type', 'password')
+            }
+        })
+
+    </script>
+</body>
+</html>
