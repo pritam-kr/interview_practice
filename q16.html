@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="input_text">
+    <button id="btn">Check</button>
+
+    <script>
+
+        const inpuText = document.querySelector('#input_text')
+        const btn = document.querySelector('#btn')
+
+        btn.addEventListener('click', (e) => {
+            // e.preventDefault()
+
+            var inputValue = inpuText.value;
+
+            if (inputValue.length > 10) {
+                alert("stop")
+            } else {
+                var url = `https://api.funtranslations.com/translate/yoda.json?text=${inputValue}`
+                console.log(fetch(url))
+                    .then((res) => { return res.json() })
+                    .then(data => console.log(data))
+            }
+
+
+        })
+
+    </script>
+</body>
+
+</html>

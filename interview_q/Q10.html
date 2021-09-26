@@ -14,16 +14,16 @@
 
       fetch("https://api.funtranslations.com/translate/prate.json")
         .then((res) => {
-          if (res.status === 404) {
-            throw Error(`${res.status} - Page not found`);
-          } else if (res.status === 401) {
-            throw Error(`${res.status} - User not logged in`);
-          } else {
-            return res.json();
+
+          if(res.status === 404){
+            console.log("Page not found")
+          }else if(res.status === 401){
+            console.log("you are not logged in")
           }
+
         })
         .then((data) => {
-          console.log(data);
+          // console.log(data);
         })
         .catch((err) => {
           document.querySelector("#err-mess").innerHTML = err;
@@ -31,3 +31,10 @@
     </script>
   </body>
 </html>
+ <!-- if (res.status === 404) {
+            throw Error(`${res.status} - Page not found`);
+          } else if (res.status === 401) {
+            throw Error(`${res.status} - User not logged in`);
+          } else {
+            return res.json();
+          } -->

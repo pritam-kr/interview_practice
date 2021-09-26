@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="date" id="date_birth">
+    <br>
+    <button id="check">Check</button>
+
+
+
+
+    <script>
+        // Here's a question Create an input field where the user can enter his/her full birthday. You have to calculate user age. Now create a button to check the following condition.
+        // 1. If the age is greater than 18 years then show a message to the user that You can drive.
+        // 2. If the age is less than 18 years then show a message that You can't drive.
+        // BONUS- If the user enters a future date then show an error.
+
+        const dateBirth = document.querySelector('#date_birth')
+        const btnCheck = document.querySelector('#check')
+
+        btnCheck.addEventListener('click', () => {
+
+            var inputDate = dateBirth.value;
+            var dob = new Date(inputDate)
+            var dateDiff = Date.now() -  dob.getTime()
+            var ageDate = new Date(dateDiff)
+            var age =   ageDate.getUTCFullYear() - 1970
+            checkAge(age)
+        })
+
+
+        function checkAge(age){
+            if(age >= 18){
+                alert("You can drive")
+            }else if(age < 18){
+                alert("You can't drive")
+            }
+        }
+
+    </script>
+</body>
+
+</html>

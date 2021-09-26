@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <form>
@@ -14,7 +16,7 @@
         <button id="btn-blue">blue</button>
         <button id="btn-green">green</button>
     </form>
-    
+
     <h1 id="out-put"></h1>
 
     <script>
@@ -22,25 +24,26 @@
 
         const inputText = document.querySelector('#input_text')
         const btn = document.querySelectorAll('button')
+
         const outPut = document.querySelector('#out-put')
 
-        btn.forEach((eachBtn) =>{
-            eachBtn.addEventListener('click', (e) =>{
+        btn.forEach((eachBtn) => {
+            eachBtn.addEventListener('click', (e) => {
                 e.preventDefault()
-                
-                var inputValue = inputText.value;
 
-                if(e.target.textContent === 'red'){
+                var inputValue = inputText.value;
+                console.log(e.target.textContent)
+                if (e.target.textContent === 'red') {
                     outPut.style.color = 'red'
-                }else if(e.target.textContent === 'blue'){
+                } else if (e.target.textContent === 'blue') {
                     outPut.style.color = 'blue'
-                }else if(e.target.textContent === 'green'){
+                } else if (e.target.textContent === 'green') {
                     outPut.style.color = 'green'
                 }
-
                 outPut.innerHTML = inputValue
             })
         })
     </script>
 </body>
+
 </html>
