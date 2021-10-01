@@ -16,9 +16,9 @@
         .then((res) => {
 
           if(res.status === 404){
-            console.log("Page not found")
+            throw Error("Page not found")
           }else if(res.status === 401){
-            console.log("you are not logged in")
+            throw Error("you are not logged in")
           }
 
         })

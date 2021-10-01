@@ -26,12 +26,14 @@
             var inputTextValue = inputText.value;
 
             fetch(`https://api.funtranslations.com/translate/yoda.json?text=${inputTextValue}`)
+
             .then((res) =>{
                 console.log(res)
               return res.json()
             })
             .then((data) =>{
-    
+
+                console.log(data)
                 document.querySelector('#translated').innerHTML = data.contents.translated.toUpperCase()
             })
         })

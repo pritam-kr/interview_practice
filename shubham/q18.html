@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">fetch</button>
+    <div id="rsult"></div>
+    <script>
+        // Small exercise from Prakhar : Create a web app, which On the Click of a button fetches data from the provided API and from the data, displays the item with the highest price on the screen, below the button.
+        // https://mock-practice.prakhar10v.repl.co/items
+
+        document.querySelector('button').addEventListener('click', (e) => {
+            fetch('https://mock-practice.prakhar10v.repl.co/items')
+                .then((res) => {
+                    return res.json()
+                })
+                .then((data) => {
+                    var show;
+                    show = `<h1>${data[0].item} <small>${data[0].price}</small></h1>`
+                    document.querySelector('#rsult').innerHTML = show
+                })
+        })
+
+
+    </script>
+</body>
+
+</html>
