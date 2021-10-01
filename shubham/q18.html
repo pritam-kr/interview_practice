@@ -22,8 +22,9 @@
                     return res.json()
                 })
                 .then((data) => {
-                    var show;
-                    show = `<h1>${data[0].item} <small>${data[0].price}</small></h1>`
+                    console.log(data)
+                    let show;
+                    show = `<h1>${data[3].item} <small>${data[3].price}</small></h1>`
                     document.querySelector('#rsult').innerHTML = show
                 })
         })
