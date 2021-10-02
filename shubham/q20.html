@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quod expedita libero eos aperiam iusto tempora voluptas consequuntur minus est quibusdam eaque voluptatibus error, voluptates optio, deleniti rem impedit blanditiis.</p>
+
+    <button id="btn-count">Count</button>
+
+    <h1></h1>
+    <script>
+// Create a paragraph  and add this sentence Lorem ipsum dolor sit amet consectetur adipisicing elit as its text node 
+// now create a button 
+// on clicking that button it should show the number of words present  in the abovementioned sentence  as an output
+// : by @shubhenduSen
+const p = document.querySelector('p')
+document.querySelector('#btn-count').addEventListener('click', (e) =>{
+    let para = p.textContent.replace(/\s/g, '').split('').length
+    document.querySelector('h1').innerHTML = para
+})
+
+    </script>
+</body>
+
+</html>
