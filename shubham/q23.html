@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <input type="text" id="input_text">
+    <input type="password" id="password">
+
+
+    <script>
+        // Create a web app, where I input my name, and then I input a password.
+        // If the password contains the input name in it, show an error message "Password can't have name"
+
+        document.querySelector('#password').addEventListener('input', (e) => {
+
+            let inputText = document.querySelector('#input_text').value;
+
+            if (e.target.value.includes(inputText)) {
+                console.log("Password can't have name")
+            }
+        })
+    </script>
+</body>
+
+</html>

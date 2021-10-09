@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input id="input_text" type="text">
+    <h1>0</h1>
+
+    <script>
+        // Started with a coding question about input getting disabled if more than 50 characters are entered. 
+
+        var count = 0
+
+        document.querySelector('#input_text').addEventListener('input', (e) => {
+            var inputText = document.querySelector('#input_text')
+
+            if (e.target) {
+                count++
+                document.querySelector('h1').innerHTML = count
+            }
+
+            if (e.target.value.length >= 50) {
+                inputText.setAttribute('disabled', true)
+            }
+        })
+
+        console.log(parseInt("2prit"))
+        console.log(Number("334"))
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input id="input_text" type="text">
+
+    <button class="btn">Log</button><button class="btn">Warn</button><button class="btn">Error</button>
+
+    <div class="outPut"></div>
+
+    <script>
+        //   Have 3 buttons with the names of "Log", "Warn"
+        //   and "Error".
+        //   If user clicks on "Log"
+        //   button then the text entered by user will be shown in black color.
+        //       Similarly
+        //   if the user clicks on "Warn "
+        //   and "Error "
+        //   buttons then the text entered by user will be shown on the screen in the yellow and red colors respectively.
+
+        const inputTxt = document.querySelector('#input_text')
+
+        document.querySelectorAll('.btn').forEach((eachBtn) => {
+            eachBtn.addEventListener('click', (e) => {
+                if (e.target.textContent === "Log") {
+
+                    outPut(inputTxt.value, "black")
+
+                } else if (e.target.textContent === "Warn") {
+
+                    outPut(inputTxt.value, "yellow")
+
+                } else if (e.target.textContent === "Error") {
+
+                    outPut(inputTxt.value, "red")
+
+                }
+            })
+        })
+
+        function outPut(str, color) {
+            document.querySelector('.outPut').innerHTML = `<h1>${str}</h1>`;
+            document.querySelector('.outPut').style.color = color;
+        }
+
+    </script>
+</body>
+
+</html>

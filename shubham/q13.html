@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-
-    <input type="text" id="input_text"> <button id="btn-highlight">Check</button>
+  <body>
+    <input type="text" id="input_text" />
+    <button id="btn-highlight">Check</button>
 
     <h1 id="outPut"></h1>
 
     <script>
-        // Add a text field. Insert a sentence. Now create a button. On clicking the button, highlight the word in the sentence with most number of characters. 
+      // Add a text field. Insert a sentence. Now create a button. On clicking the button, highlight the word in the sentence with most number of characters.
 
-        const inputText = document.querySelector('#input_text')
-        const btn = document.querySelector('#btn-highlight')
-        var largest = ""
-        btn.addEventListener('click', (e) => {
+      const inputText = document.querySelector("#input_text");
+      const btn = document.querySelector("#btn-highlight");
+      var largest = "";
+      btn.addEventListener("click", (e) => {
+        var str = inputText.value.split(" ");
 
-            var str = inputText.value.split(' ');
+        for (i = 0; i < str.length; i++) {
+          if (str[i].length > largest.length) {
+            largest = str[i];
+          }
+        }
 
-            for (i = 0; i < str.length; i++) {
-                if (str[i].length > largest.length) {
-                    largest = str[i]
-                }
-            }
-            
-            document.querySelector('#outPut').innerHTML = largest
-        })
+        document.querySelector("#outPut").innerHTML = largest;
+      });
 
-        // console.log(namek)
+      // console.log(namek)
 
-        // const myname ;
-            
+      // const myname ;
     </script>
-</body>
-
+  </body>
 </html>

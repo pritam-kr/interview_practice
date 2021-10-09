@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="mainHeader">Heading</h1>
+
+    <div class="main">
+        <h1>Heading Main</h1>
+        <p class="para">Paragraph</p>
+        <input type="text" />
+        <p class="content">Content</p>
+    </div>
+
+    <div class="section">
+        <input type="text" />
+    </div>
+    <script>
+        const array = document.querySelector("p")
+        console.log(array[0]) // undefined
+
+        const p = document.querySelectorAll("p")
+
+        var hi = document.querySelector("h1:not(.mainHeader)");
+        console.log(hi)
+
+
+        var input = document.querySelector('[type = "text" ]:not(.main)');
+        console.log(input)
+
+        var paragraph = document.querySelector(".para");
+        console.log(paragraph)
+
+    </script>
+</body>
+
+</html>
