@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button class="btn">Log</button>
+    <button class="btn">Warn</button>
+    <button class="btn">Error</button>
+    <input type="text" id="user_input">
+    <h1 id="output"></h1>
+    
+
+    <script>
+
+var btn = document.querySelectorAll(".btn")
+var output = document.querySelector("#output")
+var txt = document.querySelector("#user_input")
+
+
+btn.forEach((eachBtn)=>{
+    eachBtn.addEventListener('click',(e)=>{
+
+        var input = txt.value
+
+        if(e.target.textContent ==='Log'){
+            console.log(input)
+            output.style.color = 'black'
+            output.innerHTML = input
+        }
+        else if(e.target.textContent ==='Warn'){
+            output.style.color = 'yellow'
+            output.innerHTML = input
+        }
+        else if(e.target.textContent ==='Error'){
+            output.style.color = 'red'
+            output.innerHTML = input
+        }
+    })
+})
+    </script>
+</body>
+</html>
