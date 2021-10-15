@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="txt" id="" cols="30" rows="10" class="input"></textarea>
+    <h3 id="counter">0</h3>
+
+    <script>
+        var txt = document.querySelector(".input")
+        var counter = document.querySelector("#counter")
+
+        txt.addEventListener('input',(e)=>{
+            let count = e.target.value.length
+            counter.innerHTML = count
+
+            if(count >=100){
+                var s = e.target.value.split('').splice(100, count).join('')
+                
+            }
+            else if(count <100){
+                txt.style.color = 'black'
+            }
+        })
+
+    </script>
+
+</body>
+</html>

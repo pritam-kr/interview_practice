@@ -15,6 +15,7 @@
     <input type="text" id="input_text">
     <input type="password" id="password">
 
+    <h1></h1>
 
     <script>
         // Create a web app, where I input my name, and then I input a password.
@@ -26,6 +27,9 @@
 
             if (e.target.value.includes(inputText)) {
                 console.log("Password can't have name")
+                document.querySelector('h1').innerHTML = "Password can't have name"
+            }else{
+                document.querySelector('h1').innerHTML = "Ok"
             }
         })
     </script>

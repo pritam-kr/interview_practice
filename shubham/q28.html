@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h3 id="output"></h3>
+
     <button id="btn">Click Me</button>
+
+    <div id="output"></div>
 
     <script>
 
@@ -17,25 +21,49 @@
 
         var high = 0
         var myname = ''
+        var el = ''
 
-        btn.addEventListener('click',()=>{    
-        fetch('https://mock-practice.prakhar10v.repl.co/items')
-        .then((res)=>{
-            return res.json()
+        var newPriceArry = []
+
+
+        btn.addEventListener('click', () => {
+            fetch('https://mock-practice.prakhar10v.repl.co/items')
+                .then((res) => {
+                    return res.json()
+                })
+                .then((data, i) => {
+
+                    for (e of data) {
+                        newPriceArry.push(e.price)
+                    }
+
+                    var leasP = Math.min(...newPriceArry)
+
+                    data.forEach((eachEle, i) => {
+                        
+                        if (eachEle.price === leasP) {
+                            var color = 'red'
+                        }
+
+                        el += `<h3 style="color: ${color}">${eachEle.price}, ${eachEle.item}</h3>`
+
+                        document.querySelector('#output').innerHTML = el
+                    })
+
+                })
+
         })
-        .then((data)=>{
-        
-            for(i=0; i<data.length; i++){
-
-            if(data[i].price > high){
-                high = data[i].price
-                myname = data[i].item
-            }
-        }
-        output.innerHTML += `${high}, ${myname}` 
-        
-    })
-})
     </script>
 </body>
+
 </html>
+
+
+<!-- 
+for(i=0; i<data.length; i++){
+
+    if(data[i].price > high){
+        high = data[i].price
+        myname = data[i].item
+    }
+} -->

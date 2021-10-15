@@ -21,18 +21,14 @@
             })
             .then((data) => {
                 var user = ''
+              
                 data.results.forEach((eachUser) => {
-                    console.log(eachUser.name.first)
-                    console.log(eachUser.dob.age)
-
+                    
                     if (eachUser.dob.age > 45) {
                         var color = "green"
                     }
-
                     user += `
-                    
                     <h1 class="name" style="color: ${color};">${eachUser.name.first}</h1> <small style="color: ${color};">${eachUser.dob.age}</small>
-
                     `
                     document.querySelector('.data').innerHTML = user
                 })

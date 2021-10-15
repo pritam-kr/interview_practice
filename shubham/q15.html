@@ -29,10 +29,19 @@
         btnCheck.addEventListener('click', () => {
 
             var inputDate = dateBirth.value;
+
             var dob = new Date(inputDate)
+
+            console.log(dob.getTime())
+
             var dateDiff = Date.now() -  dob.getTime()
+
+
             var ageDate = new Date(dateDiff)
+
+
             var age =   ageDate.getUTCFullYear() - 1970
+            
             checkAge(age)
         })
 
