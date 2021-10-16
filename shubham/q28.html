@@ -1,63 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <button id="btn">Click Me</button>
 
     <div id="output"></div>
 
     <script>
+      var output = document.querySelector("#output");
+      var btn = document.querySelector("#btn");
 
-        var output = document.querySelector("#output")
-        var btn = document.querySelector("#btn")
+      var high = 0;
+      var myname = "";
+      var el = "";
 
-        var high = 0
-        var myname = ''
-        var el = ''
+      var newPriceArry = [];
 
-        var newPriceArry = []
+      btn.addEventListener("click", () => {
+        fetch("https://mock-practice.prakhar10v.repl.co/items")
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            for (e of data) {
+              newPriceArry.push(e.price);
+            }
 
+            var leasP = Math.min(...newPriceArry);
 
-        btn.addEventListener('click', () => {
-            fetch('https://mock-practice.prakhar10v.repl.co/items')
-                .then((res) => {
-                    return res.json()
-                })
-                .then((data, i) => {
+            data.forEach((eachEle) => {
+              if (eachEle.price === leasP) {
+                var color = "red";
+              }
 
-                    for (e of data) {
-                        newPriceArry.push(e.price)
-                    }
+              el += `<h3 style="color: ${color}">${eachEle.price}, ${eachEle.item}</h3>`;
 
-                    var leasP = Math.min(...newPriceArry)
-
-                    data.forEach((eachEle, i) => {
-                        
-                        if (eachEle.price === leasP) {
-                            var color = 'red'
-                        }
-
-                        el += `<h3 style="color: ${color}">${eachEle.price}, ${eachEle.item}</h3>`
-
-                        document.querySelector('#output').innerHTML = el
-                    })
-
-                })
-
-        })
+              document.querySelector("#output").innerHTML = el;
+            });
+          });
+      });
     </script>
-</body>
-
+  </body>
 </html>
-
 
 <!-- 
 for(i=0; i<data.length; i++){
