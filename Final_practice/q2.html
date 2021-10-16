@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="output"></div>
+
+    <script>
+        // Here’s an API. Fetch the name and age of user and show them on the web page. Now check weather the user is eligible for vaccination ( must be above 45 ). If yes, show the name in green colour. API - https://randomuser.me/api/?results=10
+        var peopleName = ''
+        fetch('https://randomuser.me/api/?results=10')
+            .then((res) => {
+                return res.json()
+            })
+            .then((data) => {
+                data.results.forEach((eachUser) => {
+                    vaccination(eachUser.dob.age, eachUser.name.first)
+                })
+            })
+
+        function vaccination(age, pepole) {
+
+            if (age > 45) {
+                var clr = 'green'
+            }
+
+            peopleName += `<h4 style="color: ${clr};">${pepole}, Age: <span> ${age}</span> </h4>`
+            document.querySelector('#output').innerHTML = peopleName;
+
+        }
+    </script>
+</body>
+
+</html>

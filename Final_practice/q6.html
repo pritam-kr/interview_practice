@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .bg {
+            background-color: gray;
+            transition: 0.3s;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button>Swith</button>
+    <script>
+        // Create a web app to simulate the dark mode functionality. On clicking the button, background color should change from WHITE to GREY and vice-versa.
+
+        const btn = document.querySelector('button')
+
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('bg')
+        })
+
+    </script>
+</body>
+
+</html>

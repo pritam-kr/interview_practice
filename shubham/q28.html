@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <button id="btn">Click Me</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-    <div id="output"></div>
+<body>
+  <button id="btn">Click Me</button>
 
-    <script>
-      var output = document.querySelector("#output");
-      var btn = document.querySelector("#btn");
-      var el = "";
-      var newPriceArry = [];
+  <div id="output"></div>
 
-      btn.addEventListener("click", () => {
-        fetch("https://mock-practice.prakhar10v.repl.co/items")
-          .then((res) => {
-            return res.json();
-          })
-          .then((data) => {
-            for (e of data) {
-              newPriceArry.push(e.price);
+  <input value="dddddddddfgvfgrfr">
+
+  <script>
+    var output = document.querySelector("#output");
+    var btn = document.querySelector("#btn");
+    var el = "";
+    var newPriceArry = [];
+
+    btn.addEventListener("click", () => {
+
+      fetch("https://mock-practice.prakhar10v.repl.co/items")
+        .then((res) => {
+          return res.json();
+        })
+
+        .then((data) => {
+
+          for (e of data) {
+            newPriceArry.push(e.price);
+          }
+
+          var leasP = Math.min(...newPriceArry);
+          data.forEach((eachEle) => {
+            if (eachEle.price === leasP) {
+
+              var color = "red";
             }
-
-            var leasP = Math.min(...newPriceArry);
-
-            data.forEach((eachEle) => {
-              if (eachEle.price === leasP) {
-                var color = "red";
-              }
-
-              el += `<h3 style="color: ${color}">${eachEle.price}, ${eachEle.item}</h3>`;
-
-              document.querySelector("#output").innerHTML = el;
-            });
+            el += `<h3 style="color: ${color}">${eachEle.price}, ${eachEle.item}</h3>`;
+            document.querySelector("#output").innerHTML = el;
           });
-      });
-    </script>
-  </body>
-</html>
+        });
+    });
 
- 
+    const x = [3, 4, 5, 6, 7]
+    const [a, b, ...c] = x
+    console.log(a, b, c)
+
+  </script>
+</body>
+
+</html>
