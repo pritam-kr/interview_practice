@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <input type="text" id="input_text"> <span class="count"></span></spa> <button>Tweet</button>
+
+    <p class="output"></p>
+
+    <script>
+        // Create a web app to simulate the character counter functionality of Twitter. When user starts to type something, counter should starts to decrease from 30. When counter reaches to 15, show it in yellow till 0. When counter reaches to 0, show it in red till infinite -ve number ( no min limit ). Now create a button. On clicking the button, show the input text on web page. Also, when counter is less than 0, disable the button.
+        var char = 30
+        const inputText = document.querySelector('#input_text')
+        const btn = document.querySelector('button')
+        const count = document.querySelector('.count')
+
+        inputText.addEventListener('input', (e) => {
+
+            if (char <= 15 && char >= 1) {
+                count.style.color = 'orange'
+            } else if (char <= 0) {
+                count.style.color = 'red'
+                btn.setAttribute('disabled', true)
+            }
+
+            if (e.target) {
+                char--
+            }
+            count.innerHTML = char
+            document.querySelector('.output').innerHTML = e.target.value
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

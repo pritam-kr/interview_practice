@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="input_name">
+    <input type="text" id="input_color">
+
+    <button>Color</button> <button>Text</button>
+
+    <div class="output"></div>
+
+    <script>
+        // 11.Create a web app which has two input fields and two buttons. One input field will be used to take the input from the user and on the click of a button it will be displayed in h1,p, or you can use any tag of your preference. the second onput will take the color and on the click of the other button the displayed text should change to the color enterd by the user. 
+
+
+        const inputText = document.querySelector('#input_name')
+        const inputColor = document.querySelector('#input_color')
+        const btns = document.querySelectorAll('button')
+
+        btns.forEach((each) =>{
+            each.addEventListener('click', (e) =>{
+
+                if(e.target.textContent === "Text"){
+                    document.querySelector('.output').innerHTML = inputText.value;
+                }else if(e.target.textContent === "Color"){
+                    document.querySelector('.output').style.color = `${inputColor.value}`
+                }
+            })
+        })
+    </script>
+</body>
+</html>
