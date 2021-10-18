@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string
+
+        var vowel = ["a", "e", "i", "o", "u"]
+        var count = 0
+
+        const countVowel = (v) => {
+
+            for (i = 0; i < v.length; i++) {
+                if (v[i].match(vowel[i])) {
+                    count = count + 1
+                }
+            }
+            return count
+
+        }
+
+        console.log(countVowel("elepheauioouieaanteeeeeee"))
+    </script>
+</body>
+
+</html>

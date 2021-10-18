@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <textarea id="input_text" cols="30" rows="10" maxlength="50"></textarea> <input type="button" value="Click" id="btn" disabled/>
+
+    <script>
+            // The question Pranshu asked was that the user will not be able to
+            //  add more characters after a certain limit has been reached(deleting 
+            // characters is still possible).He asked Saksham to disable the button 
+            // when the text area is empty and enable it when something is typed.
+            // As an extension of this, you can also cover the edge case that the 
+            // button should remain disabled if there are only spaces in the text area.
+
+            const inputText = document.querySelector('#input_text')
+            const btn = document.querySelector('#btn')
+
+            inputText.addEventListener('input', (e) =>{
+                if(e.target.value.length > 0){
+                   btn.disabled = false
+                } else if(e.target.value.length === 0){
+                    btn.disabled = true
+                }
+               
+            })
+
+    </script>
+</body>
+
+</html>
