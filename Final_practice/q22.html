@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="input_one">
+    <input type="text" id="input_two">
+    <input type="text" disabled class="input_three" value="">
+
+
+    <button>+</button>
+    <button>-</button>
+    <button>*</button>
+    <button>/</button>
+
+    <button class="changeColor">Change Color</button>
+
+    <script>
+
+        // Create a web app which would take two inputs. It would also have 4 buttons: +, -, x /. Based on the button clicked perform the operation on the two inputs.
+        var count = 0
+        const btns = document.querySelectorAll('button')
+        const inputOne = document.querySelector('#input_one')
+        const inputTwo = document.querySelector('#input_two')
+        const inputThree = document.querySelector('.input_three')
+        const btnChangeColor = document.querySelector('.changeColor')
+
+
+        btns.forEach((each) => {
+            each.addEventListener('click', (e) => {
+
+                if (e.target.innerText === "+") {
+                    var addd = Number(inputOne.value) + Number(inputTwo.value)
+                    showOutput(addd)
+
+
+                } else if (e.target.innerText === "-") {
+                    var sub = Number(inputOne.value) - Number(inputTwo.value)
+                    showOutput(sub)
+                    inputThree.style.color = 'black'
+
+                } else if (e.target.innerText === "*") {
+                    var mul = Number(inputOne.value) * Number(inputTwo.value)
+                    showOutput(mul)
+                    inputThree.style.color = 'black'
+
+                } else if (e.target.innerText === "/") {
+                    var divi = Number(inputOne.value) / Number(inputTwo.value)
+                    showOutput(divi)
+                    inputThree.style.color = 'black'
+                }
+            })
+        })
+
+        function showOutput(e) {
+            inputThree.setAttribute('value', e)
+            console.log(inputThree.getAttribute('value'))
+        }
+
+        
+            btnChangeColor.addEventListener('click', (e) => {
+                inputThree.style.color = 'red'
+            })
+        
+
+    </script>
+</body>
+
+</html>

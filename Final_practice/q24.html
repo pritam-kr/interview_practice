@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <label>Name</label>
+        <input type="radio" id="myname" value="Pritam" name="question"/>
+
+        <label>Age</label>
+        <input type="radio" id="my_age" value="23" name="question"/>
+
+        <label>Gender</label>
+        <input type="radio" id="my_gender" value="male" name="question"/>
+
+        <button>Click</button>
+    </form>
+
+    <div class="output"></div>
+    
+    <script>
+         
+
+         const myName = document.querySelector('#myname')
+         const myAge = document.querySelector('#my_age')
+         const myGender = document.querySelector('#my_gender')
+
+
+         document.querySelector('button').addEventListener('click', (e) =>{
+
+            e.preventDefault()
+        
+             if(myName.checked === true){
+                document.querySelector('.output').innerHTML = myName.value;
+             }else if(myAge.checked === true){
+                document.querySelector('.output').innerHTML = myAge.value;
+             }else if(myGender.checked === true){
+                document.querySelector('.output').innerHTML = myGender.value;
+             }
+         })
+        
+    </script>
+</body>
+</html>
