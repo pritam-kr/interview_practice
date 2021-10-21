@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div>
+        <form class='user-form' onsubmit="return false">
+            <p class="info">What do you want to know about me</p>
+            <input type="radio" value="name" name="question1">Name</input>
+            <input type="radio" value="age" name="question1">age</input>
+            <input type="radio" name="question1" value="gender">gender</input>
+            <div>
+                <button id="submit">submit</button>
+            </div>
+        </form>
+
+        <p id="output"></p>
+    </div>
+    <script>
+        var form = document.querySelector(".user-form");
+        var output = document.querySelector("#output");
+
+        const myDetails = {
+            name: 'Poornima',
+            age: 21,
+            gender: "Female"
+        }
+
+        function formHandler() {
+            var data = new FormData(form);
+
+            for (let item of data.values()) {
+                console.log(item)
+                if (item in myDetails) {
+
+                    output.innerText = myDetails[item];
+                }
+            }
+
+        }
+
+
+        form.addEventListener("submit", formHandler);
+
+
+    </script>
+</body>
+
+</html>

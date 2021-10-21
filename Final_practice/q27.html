@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>Click</button>
+
+    <h1 class="output">0</h1>
+
+    <script>
+        //         10) Create a like counter when u click on button, it should increase by one but output should be: 
+        // 1 (on single click)
+        // 12 (on two clicks)
+        // 123 (on three clicks)
+        // 1234 (on four clicks) 
+        // and so on..
+
+
+        const btn = document.querySelector('button')
+        const output = document.querySelector('.output')
+        var count = 0
+
+        var out = []
+
+        btn.addEventListener('click', (e) =>{
+
+           count = count + 1
+        //     out.push(count)
+        
+        //     document.querySelector('.output').innerHTML = out.join('')
+
+        output.innerHTML += count
+       
+        })
+
+
+    </script>
+</body>
+
+</html>
