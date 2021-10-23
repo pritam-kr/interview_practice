@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <div class="output"></div>
+
+        <p></p>
+
+        <button>fetch</button>
+
+    <script>
+
+// Here's an API, it can give two errors. Either 404, or 401. If the error is 404, show the user 'page not found' and if the error is 401, show the user 'you are not logged in'.
+
+        const btn = document.querySelector('button')
+
+        btn.addEventListener('click' , () =>{
+
+            fetch('https://mystery-api.kushanksriraj.repl.co/get')
+
+            .then((res) =>{
+                console.log(res)
+
+                if(res.status === 404){
+                    document.querySelector('.output').innerHTML = "user not found"
+                }else if(res.status === 401){
+                    document.querySelector('.output').innerHTML = "user's not logged in"
+                }
+
+                return res.text()
+            })
+            .then((data) =>{
+               
+                document.querySelector('.output').innerHTML = data
+            })
+
+
+
+        })
+
+        
+
+    </script>
+</body>
+</html>
