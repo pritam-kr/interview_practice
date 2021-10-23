@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <input type="text" id="input_filed">
+
+    <div class="out"></div>
+
+    <script>
+      //         Q1) Create an Input Element, which shows a display message according to the Input text.
+      // If you type -
+      const data = {
+        tanvi: "She is the best CEO ever!",
+        tanay: "He is our FUNNY mentor!",
+        swapnil: "He helps us CONQUER jobs!",
+        akanksha: "She is our CHEERFUL Interviewer!",
+      };
+
+      const inputText = document.querySelector('#input_filed')
+
+      inputText.addEventListener('input', (e) => {
+          let inputValue = e.target.value.toLowerCase();
+
+          if(data[inputValue] == undefined){
+            data[inputValue] = " "
+          }
+
+         document.querySelector('.out').innerHTML = data[inputValue]
+
+      })
+
+    </script>
+  </body>
+</html>
