@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>YJHD</button>
+    <button>ZNMD</button>
+
+    <h1></h1>
+
+    <script>
+
+        // Second Question to shishir :
+        // Q1) Create 2 buttons with text YJHD and ZNMD. On the click of a button, call given API with query as same as the button text, and display the message you get on the screen. 
+        // API - https://mock-practice.prakhar10v.repl.co/bollywood?name= 
+
+        // Eg - Clicking on button YJHD will make a call to https://mock-practice.prakhar10v.repl.co/bollywood?name=YJHD .
+
+
+        const btns = document.querySelectorAll('button')
+
+        btns.forEach((eachBtn) => {
+            eachBtn.addEventListener('click', (e) => {
+                if (e.target.innerText === "YJHD") {
+                    fetchApi(e.target.innerText)
+                } else if (e.target.innerText === "ZNMD") {
+                    fetchApi(e.target.innerText)
+                }
+            })
+        })
+
+        function fetchApi(query) {
+            fetch(`https://mock-practice.prakhar10v.repl.co/bollywood?name=${query}`)
+
+                .then((res) => {
+                    return res.json()
+                })
+                .then((data) => {
+                    document.querySelector('h1').innerHTML = data.message;
+                })
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
