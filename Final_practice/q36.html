@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+
+        <input id="value" type="text" value="1" />
+
+        <input id="double" type="button" value="click" />
+
+    </form>
+
+
+    <script>
+        //         HTML page contains the following form:
+        // Write a setup function that registers a click handler and implements the following logic:
+        // When a button with id double is clicked, the value of the text field with id value should be doubled.
+        // If the value of the text field is not numeric, the button click should set it to 1.
+        // Ye chit chat mai mast question mila muzhe 
+
+        const inputField = document.querySelector('#value')
+        const btn = document.querySelector('#double')
+        const alphabate = 'abcdefghijklmnopqrstuvwxyz'
+        var count = 1;
+
+        btn.addEventListener('dblclick', (e) => {
+
+            count = count + count
+            inputField.value = count
+
+        })
+
+        inputField.addEventListener('input', (e) => {
+
+            for (l of alphabate) {
+                 
+                if (inputField.value.length > 2) {
+                    if (inputField.value.match(l)) {
+                        count = 1
+                         
+                        inputField.value = count
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
