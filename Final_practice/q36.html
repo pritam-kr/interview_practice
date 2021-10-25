@@ -34,24 +34,28 @@
         btn.addEventListener('dblclick', (e) => {
 
             count = count + count
-            inputField.value = count
+            inputField.value = Number(count)
 
-        })
-
-        inputField.addEventListener('input', (e) => {
-
-            for (l of alphabate) {
-                 
-                if (inputField.value.length > 2) {
-                    if (inputField.value.match(l)) {
-                        count = 1
-                         
-                        inputField.value = count
-                    }
-                }
+            if(!Number(inputField.value)){
+                inputField.value = 1;
             }
 
         })
+
+        // inputField.addEventListener('input', (e) => {
+
+        //     for (l of alphabate) {
+                 
+        //         if (inputField.value.length > 2) {
+        //             if (inputField.value.match(l)) {
+        //                 count = 1
+                         
+        //                 inputField.value = count
+        //             }
+        //         }
+        //     }
+
+        // })
     </script>
 </body>
 

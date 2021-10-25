@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn-check">Click</button>
+    <div class="showResult">Your result will be shown here</div>
+
+    <script>
+        var btnCheck = document.querySelector('.btn-check')
+        var showResult = document.querySelector('.showResult')
+
+        var personOne = {
+            name: 'Ram',
+            age: 25,
+            power: 'treta'
+        }
+        var personTwo = {
+            name: 'Krishna',
+            age: 31,
+            power: 'dwapar'
+        }
+
+
+        btnCheck.addEventListener('click', () => {
+
+            if (personOne.age > personTwo.age)
+                console.log(personOne)
+            else {
+                console.log(personTwo)
+            }
+        })
+        
+    </script>
+</body>
+
+</html>

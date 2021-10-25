@@ -14,8 +14,12 @@
         // Here's an API. It will give an error. Write a web app, call this API and read the error message. Show user the error message.
 
         fetch('https://jsonplaceholder.typicode.com/users')
+
         
         .then((res) =>{
+
+            console.log(res)
+
            if(res.ok == false){
            throw Error(`Error occured with this API and response status is ${res.status}`)
            }else{
@@ -25,6 +29,7 @@
         .then((data) =>{
              console.log(data)
         })
+
         .catch((err) =>{
             // console.log(err)
             document.querySelector('#err-mess').innerHTML = err;

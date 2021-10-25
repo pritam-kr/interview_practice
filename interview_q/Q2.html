@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form>
         <input id="input-one" type="text">
@@ -26,27 +28,31 @@
         const inputTwo = document.querySelector('#input-two')
         const outPut = document.querySelector('.out-put')
 
-        btn.forEach((eachBtn) =>{
-            eachBtn.addEventListener('click', (e) =>{
+        btn.forEach((eachBtn) => {
+            eachBtn.addEventListener('click', (e) => {
                 e.preventDefault()
 
-                var inputValueOne = Number(inputOne.value)
-                var inputValueTwo = Number(inputTwo.value)
 
-                console.log(e.target.textContent)
 
-                if(e.target.textContent === "+"){
-                    outPut.innerHTML = inputValueOne + inputValueTwo
-                }else if(e.target.textContent === "-"){
-                    outPut.innerHTML = inputValueOne - inputValueTwo
-                }else if(e.target.textContent === "*"){
-                    outPut.innerHTML = inputValueOne * inputValueTwo
-                }else if(e.target.textContent === "/"){
-                    outPut.innerHTML = inputValueOne / inputValueTwo
-                }
+                solutions(e.target.innerText)
+
+
+
             })
+
+
         })
+
+
+        function solutions(e) {
+            var inputValueOne = Number(inputOne.value)
+            var inputValueTwo = Number(inputTwo.value)
+
+
+        }
+
 
     </script>
 </body>
+
 </html>
