@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+       
+    </style>
+</head>
+
+<body>
+
+    <h1>Display a Range Field</h1>
+
+    <form>
+        <label for="vol">Volume (between 0 and 50):</label>
+        <input type="range" id="vol" name="vol" value="4" min="0" max="50" />
+        <input type="submit" id="btn">
+    </form>
+    <p>4</p>
+
+    <script>
+        document.querySelector('#vol').addEventListener('input', (e) => {
+
+            document.querySelector('p').innerHTML = document.querySelector('#vol').value
+            document.querySelector('#vol').setAttribute('value', e.target.value)
+            
+        })
+    </script>
+</body>
+
+</html>
