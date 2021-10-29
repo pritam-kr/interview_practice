@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .output {
+           visibility: hidden;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <button>plus</button>
+    <button>minus</button>
+    <button>Reset</button>
+
+    <div class="output">
+        kkk
+        
+        <div class="item">
+            jj
+        </div>
+
+    </div>
+
+    <script>
+
+        var count = 0;
+
+        const btns = document.querySelectorAll('button')
+
+        const outPut = document.querySelector('.output')
+
+        btns.forEach((eachBtn) => {
+
+            eachBtn.addEventListener('click', (e) => {
+
+                getCounter(e.target.innerText)
+
+            })
+        })
+
+        function getCounter(e) {
+
+            if (e === "plus") {
+                count++
+            } else if (e === "minus") {
+                count--
+            } else if (e === "reset") {
+                count = 0
+
+            }
+
+            if (outPut.innerText === "0") {
+                btns[2].disabled = true
+            }
+
+            outPut.innerHTML = count
+        }
+
+        // create three button  plus, minus and reset
+        // and create an element div with 0 as an initial text content
+        // when  the user clicks "plus" increment  element by one
+        // when the user clicks "minus" decrement it by one
+        // when the user clicks "reset"
+        // set it to zero
+
+
+
+
+
+        console.log(parseInt("45hfkdk"))
+        console.log(Number("67jjjj"))
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+
+
+    <h1 id="counter">0</h1>
+
+    <button>+</button>
+    <button>-</button>
+
+    <script async>
+
+        // Create a counter app which consist of counter value with two buttons + and -. On clicking these buttons the number should increment and decrement respectively. Add on make '-' button disable while counter value is 0, only enable when the counter value is greater than 0 and again disable '-' button when counter value becomes 0.
+
+        const counterValue = document.querySelector('#counter')
+        const btns = document.querySelectorAll('button')
+
+        var count = 0
+
+        btns.forEach((eachBtn) => {
+            eachBtn.addEventListener('click', (e) => {
+                getCount(e.target.innerText)
+            })
+        })
+
+        function getCount(e) {
+
+            if (e === "+") {
+                count++
+            } else {
+                count--
+            }
+
+            counterValue.innerHTML = count
+
+            if(counterValue.innerText === "0"){
+               btns[1].disabled = true
+            }else if(Number(counterValue.innerText) >= 1){
+                btns[1].disabled = false
+            }
+        }
+
+
+
+
+
+        // if (counterValue.innerText === "0") {
+        //     btns[1].disabled = true;
+        // }
+
+    </script>
+</body>
+
+</html>

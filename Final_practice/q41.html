@@ -44,22 +44,18 @@
 
         btns.forEach((eachBtn) => {
             eachBtn.addEventListener('click', (e) => {
+
                 stylingText(e.target.textContent)
             })
         })
 
         function stylingText(e) {
 
-            if (e === "Bold") {
-                result.classList.toggle('bold')
-            } else if (e === "Italic") {
-                result.style.fontStyle = 'italic'
-            } else if (e === "Strike") {
-                result.style.textDecoration = 'line-through'
-            }
-
+            result.classList.toggle(`${e}`)
             result.innerHTML = inputText.value
         }
+
+
     </script>
 </body>
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .bold{
+            font-weight: bold;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .underline{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    
+    <input type="text" id="input_field">
+
+    <button>Bold</button>
+    <button>Italic</button>
+    <button>Underline</button>
+
+    <div class="out"></div>
+
+    <script>
+    
+    const inputText = document.querySelector('#input_field')
+    const btns = document.querySelectorAll('button')
+    const outPut = document.querySelector('.out')
+
+    btns.forEach((eachBtn) =>{
+        eachBtn.addEventListener('click', (e) =>{
+
+            console.log(e.target.innerText)
+
+            showOutPut(e.target.innerText)
+        })
+    })
+
+    function showOutPut(e){
+
+
+if(e === "Bold"){
+    outPut.classList.toggle("bold")
+}else if(e === "Italic"){
+    outPut.classList.toggle("italic")
+}else{
+    outPut.classList.toggle("underline")
+}
+
+
+outPut.innerHTML = inputText.value
+
+
+    }
+
+    </script>
+</body>
+</html>
