@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Build a counter application and then some questions were asked related to the coding part
+
+    <h1>0</h1>
+
+    <button>Increment</button>
+    <button>Dcrement</button>
+    <button>Reset</button>
+
+    <script>
+        const btns = document.querySelectorAll('button')
+        const counterValue = document.querySelector('h1')
+        var count = 0;
+
+        btns.forEach((eachBtn) => {
+            eachBtn.addEventListener('click', (e) => {
+                getCounterValue(e.target.innerText)
+
+                console.log(e.target.innerText)
+            })
+        })
+
+        function getCounterValue(c) {
+
+            if (c === "Increment") {
+                count++
+            } else if (c === "Dcrement") {
+                count--
+            } else {
+                count = 0
+            }
+
+            if (count < 0) {
+                count = 0
+            }
+            counterValue.innerHTML = count
+
+            if (count < 0) {
+                counterValue.style.color = "red"
+            } else if (count > 10) {
+                counterValue.style.color = "green"
+            } else {
+                counterValue.style.color = "black"
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

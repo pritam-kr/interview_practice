@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Refer to https://npmjs.com/ on the top navbar at the left there is a heart shaped icon which when clicked returns
+        3 words every now on each click and the first character taken from each of the 3 words forms "NPM"
+        So what Akshay wanted Divya to do was to have a button in the display which on every click show a random word
+        from a list of words
+        (Divya did it using Vanilla JS on Vscode)
+        Hint: use the inbuilt function random from Math library for solving it</p>
+
+    <h4 id="words"></h4>
+
+    <button id="btn-random">Random word</button>
+
+    <script>
+        const words = [
+            'Npm rocks',
+            'I love npm',
+            'I love readlinesync',
+            'Sike it is the best',
+            'I love chalk',
+        ];
+
+        const ShowWords = document.querySelector('#words')
+        const btnRandom = document.querySelector('#btn-random')
+
+        btnRandom.addEventListener('click', (e) =>{
+            var getRandomWord = words[Math.floor(Math.random()*words.length)]
+            ShowWords.innerHTML = getRandomWord;
+        })
+    </script>
+</body>
+
+</html>

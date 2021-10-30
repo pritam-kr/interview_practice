@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    Create an Input Element, which shows a display message according to the
+    Input text with the click of a button. If you type -
+
+    <input type="text" id="input_field" />
+
+    <h4></h4>
+
+    <script>
+      const data = {
+        tanvi: "She is the best CEO ever!",
+        tanay: "He is our FUNNY mentor!",
+        swapnil: "He helps us CONQUER jobs!",
+        akanksha: "She is our CHEERFUL Interviewer!",
+      };
+
+      const showName = document.querySelector('h4')
+      const inputField = document.querySelector('#input_field')
+
+      inputField.addEventListener('input', (e) => {
+
+          var inputValue = e.target.value
+
+         
+
+          if(data[inputValue] == undefined){
+            data[inputValue] = ""
+          }
+
+          showName.innerHTML = data[inputValue]
+      })
+
+    </script>
+  </body>
+</html>

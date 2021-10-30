@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    Create a web app and render your name using any heading or paragraph tag.
+    It should have a border of 1px around it. Create 2 buttons, '5px' and '10px' below your name. The width of border
+    should change to 5px and 10px by clicking respective buttons.
+
+    <h1>Pritam Kumar</h1>
+
+    <button id="btn-five" >5px</button>
+    <button id="btn-ten" >10px</button>
+
+
+
+    <script>
+        const myName = document.querySelector('h1')
+        const btns = document.querySelectorAll('button')
+
+        var border = 0 
+
+        btns.forEach((eachBtn) => {
+            eachBtn.addEventListener('click', (e) =>{
+
+                if(e.target.innerText === "5px"){
+                    border = border + 5;
+                    
+                }else if(e.target.innerText === "10px"){
+                    border = border + 10
+                }
+
+                myName.style.border = border + "px " + " solid" + " green"
+
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>

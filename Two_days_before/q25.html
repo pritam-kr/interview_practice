@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>  // create three button  plus, minus and reset
+        // and create an element div with 0 as an initial text content
+        // when  the user clicks "plus" increment  element by one
+        // when the user clicks "minus" decrement it by one
+        // when the user clicks "reset"
+        // set it to zero</p>
+
+        <h4 id="counter_value"></h4>
+
+        <button>Increment</button><button>Decrement</button><button>Reset</button>
+
+        <script>
+            const btns = document.querySelectorAll('button')
+            const counterValue = document.querySelector('#counter_value')
+            var count = 0;
+
+            btns.forEach((eachBtn) =>{
+                eachBtn.addEventListener('click', (e) =>{
+                    getCounterValue(e.target.innerText)
+                })
+            })
+
+            function getCounterValue(s){
+                if(s === "Increment"){
+                    count++
+                }else if(s === "Decrement"){
+                    count--
+                }else if(s === "Reset"){
+                    count = 0
+                }
+
+                counterValue.innerHTML = count
+
+                if(count === 0){
+                    btns[2].disabled = true
+                }else{
+                    btns[2].disabled = false
+                }
+            }
+        </script>
+</body>
+</html>

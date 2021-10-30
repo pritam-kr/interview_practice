@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Create a password checker web app.If the length of the password is less than 10 characters then show an error
+        message and if its length is greater then show the
+        message "Password is valid"
+        Followup: If there is nothing in the input section then no message should be shown
+        (Kevin does it using Vanilla JS on stackblitz)</p>
+
+    <input type="password" id="input_password" />
+    <p id="message"></p>
+
+    <script>
+        const inputPassword = document.querySelector('#input_password')
+        const showMessage = document.querySelector('#message')
+
+        inputPassword.addEventListener('input', (e) => {
+
+            if (e.target.value.length === 0) {
+                showMessage.innerHTML = " "
+            } else if (e.target.value.length > 10) {
+                showMessage.innerHTML = "Password is valid"
+            } else if (e.target.value.length < 10) {
+                showMessage.innerHTML = "Password in not valid"
+            }
+        })
+    </script>
+</body>
+
+</html>

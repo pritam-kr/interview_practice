@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Create an array of 10 names. [ "Abhi", "Vishal","Aryan","John",.........upto 10 ]. Now create a button. On clicking the button, show one random name.
+
+    <button id="btn_generate">Random Name</button>
+
+    <div class="output"></div>
+
+    <script>
+        const studentName = ["pritam", "rahul", "shubham", "raju", "sonu", "pintu"]
+        const btnGenerate = document.querySelector('#btn_generate')
+
+        const output = document.querySelector('.output')
+
+
+        btnGenerate.addEventListener('click', (e) =>{
+            var randomeName = studentName[Math.floor(Math.random()*studentName.length)]
+
+            if(randomeName === "rahul" || randomeName === "pritam"){
+                output.style.color = 'green'
+            }else{
+                output.style.color = 'red'
+            }
+
+            output.innerHTML = randomeName;
+        })
+
+    </script>
+</body>
+</html>

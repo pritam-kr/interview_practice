@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Here's an API Link: https://mystery-api.kushanksriraj.repl.co/get
+
+    This API link can give two errors, either 404, or 401.
+    If the error is 404, show the user 'page not found' and if the error is 401, show the user
+    'you are not logged in'.
+    Followup question: If the status is 200 then show the message "API is working"
+
+    <p></p>
+
+    <script>
+        const message = document.querySelector('p')
+
+        fetch('https://mystery-api.kushanksriraj.repl.co/get')
+        .then((res) =>{
+            console.log(res.status)
+             if(res.status = 404){
+                showMessage("page not found")
+            }else if(res.status = 401){
+                showMessage("You're not logged in")
+            }else if(res.status = 200){
+                showMessage("API is working")
+            }else{
+                return res.json()
+            }
+        })
+        .then((data) => {
+
+        })
+        .catch((err) => {
+            showMessage("Error found" + err)
+        })
+
+
+        function showMessage(mess){
+            message.innerHTML = `${mess}`
+        }
+
+    </script>
+</body>
+</html>

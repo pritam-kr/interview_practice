@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .bold{
+            font-weight: bold;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .strike{
+            text-decoration: line-through;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <p id="output"></p>
+    <button>Bold</button><button>Italic</button><button>Strike</button>
+
+    <script>
+        const btns = document.querySelectorAll('button')
+        const outPut = document.querySelector('#output')
+
+        btns.forEach((eachBtn) =>{
+            eachBtn.addEventListener('click', (e) =>{
+                getText(e.target.innerText)
+            })
+        })
+
+        function getText(e){
+            if(e === "Bold"){
+                outPut.classList.toggle('bold')
+            }else if(e === "Italic"){
+                outPut.classList.toggle('italic')
+            }else{
+                outPut.classList.toggle('strike')
+            }
+
+            outPut.innerHTML = e
+        }
+    </script>
+</body>
+</html>

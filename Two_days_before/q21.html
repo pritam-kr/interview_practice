@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="paragraph">Put a paragraph on web with 16px font size. Now Increase the font size by 4px and vice-versa with the help of two
+        buttons. Now change the colour of paragraph to RED when font size is divisible by 5. ( This question was given
+        by Pranshu (neoGrad) in my mock interview)</p>
+
+        <button>Increase</button>
+        <button>Decrease</button>
+
+    <script>
+
+        const paragraph = document.querySelector('#paragraph')
+        const btns = document.querySelectorAll('button')
+        var size = 16;
+
+        btns.forEach((eachBtn) =>{
+            eachBtn.addEventListener('click', (e) =>{
+                getFontSize(e.target.innerText)
+            })
+        })
+
+       function getFontSize(s){
+            if(s === "Increase"){
+                size = size + 4
+            }else{
+                size = size - 4
+            }
+
+            if(size % 5 === 0){
+                paragraph.style.color = "green"
+            }else{
+                paragraph.style.color = "black"
+            }
+
+            paragraph.style.fontSize = size + "px"
+
+         }
+
+    </script>
+</body>
+
+</html>

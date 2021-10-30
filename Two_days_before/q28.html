@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>you have to create a profit and loss calculator, in which you will make two input sections one will take current price and other one will take the cost price and to show result one will click on a button and a message will be shown, if there is loss then you just have to show a message with loss amount and similarly for profit</p>
+
+<div id="result"></div>
+<input type="text" id="cost_price" placeholder="cost price" />
+ <input type="text" id="purchase_price" placeholder="purchase price "/> 
+<button id="btn-calculate">Calculate</button>
+
+
+<script>
+    const btnCalculate = document.querySelector('#btn-calculate')
+    const ShowResult = document.querySelector('#result')
+    const currentPrice = document.querySelector('#cost_price')
+    const purchasePrice = document.querySelector('#purchase_price')
+
+    btnCalculate.addEventListener('click', (e) =>{
+
+        var costPriceValue = Number(currentPrice.value)
+        var purchasePriceValue = Number(purchasePrice.value)
+
+        if(costPriceValue>purchasePriceValue){
+            const totalProfit = (costPriceValue - purchasePriceValue)
+            ShowResult.innerHTML = totalProfit
+        }else{
+            const totalLoss = (purchasePriceValue - costPriceValue)
+            ShowResult.innerHTML = totalLoss
+        }
+    })
+</script>
+</body>
+</html>

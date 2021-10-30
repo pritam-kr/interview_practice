@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Take an input from the user in text format.
+    Have 3 buttons with the names of "Log" ,"Warn" and "Error".
+    If user clicks on "Log" button then the text entered by user will be shown in black color.
+    Similarly if the user clicks on "Warn " and "Error " buttons then the text entered by user will be shown on the
+    screen in the yellow and red colors respectively
+
+    <input type="text" id="input_field" />
+    <button>Log</button>
+    <button>Warn</button>
+    <button>Error</button>
+
+    <div class="output"></div>
+
+    <script>
+        const output = document.querySelector('.output')
+        const btns = document.querySelectorAll('button')
+        const inputField = document.querySelector('#input_field')
+        var color = ''
+
+        btns.forEach((eachBtn) => {
+            eachBtn.addEventListener('click', (e) => {
+                getColorText(e.target.innerText)
+            })
+        })
+
+        function getColorText(e) {
+
+            if (e === "Log") {
+                color = 'black'
+            } else if (e === "Warn") {
+                color = 'yellow'
+            } else {
+                color = 'red'
+            }
+
+            output.style.color = color;
+            output.innerHTML = e
+        }
+    </script>
+</body>
+
+</html>

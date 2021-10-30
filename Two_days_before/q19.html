@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Here' an API. It will give an error. Write a web app, call this API and read the error message. Show the name of the error (not whole error). API - https://randomsuser.me/api/</p>
+
+    <div class="output"></div>
+
+    <script>
+        const output = document.querySelector('.output')
+        fetch('https://randomsuser.me/api/')
+        .then((res) =>{
+            return res.json()
+        })
+        .then((data) =>{
+            console.log(data)
+        })
+        .catch((error) =>{
+            output.innerHTML = error
+        })
+    </script>
+</body>
+</html>

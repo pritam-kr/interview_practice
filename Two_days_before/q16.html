@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Create 2 buttons with text YJHD and ZNMD. At the click of a button, call the given API with the query as same as
+        the button text, and display the message you get on the screen.
+        Followup: Instead of using calling the fetch function twice in both events(clicking of buttons), enclose it in a
+        different function so that it can be used accordingly in both areas.
+
+        The trick in the follow-up: addEventListerner methods do not require any additional parameter to be attached in
+        the function that is passed as 2nd parameter otherwise that function gets called there itself on the spot
+        instead of executing the function on the event. Solved by using arrow Function</p>
+        <p>https://mock-practice.prakhar10v.repl.co/bollywood?name=</p>
+
+        <button>YJHD</button>
+        <button>ZNMD</button>
+
+        <p id="message"></p>
+
+        <script>
+            const message = document.querySelector('#message')
+            const btns = document.querySelectorAll('button')
+
+            btns.forEach((eachBtn) =>{
+                eachBtn.addEventListener('click', (e) =>{
+                    getMessage(e.target.innerText)
+                })
+            })
+
+            function getMessage(query){
+                fetch(`https://mock-practice.prakhar10v.repl.co/bollywood?name=${query}`)
+                .then((res) =>{
+                    return res.json()
+                })
+                .then((data) => {
+                    message.innerHTML = data.message;
+                })
+            }
+        </script>
+</body>
+
+</html>

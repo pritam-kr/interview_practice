@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Create a password checker web app. If password is less than 10 characters then show an error to user otherwise show success. 
+
+    <div class="output"></div>
+
+    <input id="input_field" type="text" />
+
+    <script>
+
+const inputField = document.querySelector('#input_field')
+const outPut = document.querySelector('.output')
+
+inputField.addEventListener('input', (e) =>{
+    
+    if(e.target.value.length >= 10){
+        outPut.style.color = "red"
+        outPut.innerHTML = "Error occured"
+    }else{
+        outPut.style.color = "green"
+        outPut.innerHTML = "Better one"
+    }
+})
+
+    </script>
+</body>
+</html>

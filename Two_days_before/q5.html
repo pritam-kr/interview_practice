@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Create a game (Guess The Number) where user has to guess the random number range from 1 to 10. User will input a
+    number between 1 to 10 . On clicking the button, show the user whether he/she has guess the number or not
+
+    <input type="text" id="input_field" />
+    <button id="btn-click">Click</button>
+    <div class="output"></div>
+    <script>
+
+        const inputField = document.querySelector('#input_field')
+        const btnCheck = document.querySelector('#btn-click')
+        const outPut = document.querySelector('.output')
+
+        btnCheck.addEventListener('click', (e) => {
+            var randomNumber = Math.floor(Math.random() * 10)
+
+            if (randomNumber === Number(inputField.value)) {
+                outPut.innerHTML = "you win"
+            } else {
+                outPut.innerHTML = "you lose"
+            }
+        })
+    </script>
+</body>
+
+</html>

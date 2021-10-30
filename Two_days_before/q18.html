@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Here’s an API. Fetch the name and age of user and show them on the web page. Now check weather the user is
+        eligible for vaccination ( must be above 45 ). If yes, show the name in green colour. API -
+        https://randomuser.me/api/?results=10</p>
+
+    <div class="output"></div>
+    <script>
+        const url = 'https://randomuser.me/api/?results=10'
+        const outPut = document.querySelector('.output')
+        fetch(url)
+            .then((res) => {
+                return res.json()
+            })
+            .then((data) => {
+                console.log(data.results)
+                var firstName = ''
+                data.results.forEach((e) => {
+
+                    var setColor = getAgeAbove(e.dob.age)
+                    firstName += `<p style="color: ${setColor}">${e.name.first} ${e.name.last}, Age: ${e.dob.age} </p>`
+
+                    outPut.innerHTML = firstName
+                })
+            })
+
+        function getAgeAbove(a) {
+            if (a > 45) {
+                return "green"
+            } else {
+                return "red"
+            }
+        }
+    </script>
+</body>
+
+</html>
