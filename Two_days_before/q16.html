@@ -37,6 +37,7 @@
             function getMessage(query){
                 fetch(`https://mock-practice.prakhar10v.repl.co/bollywood?name=${query}`)
                 .then((res) =>{
+                    console.log(res)
                     return res.json()
                 })
                 .then((data) => {

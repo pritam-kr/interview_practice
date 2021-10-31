@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> // Create a password checker. When char goes above 10, input border should become green. Now create a button. On
+        clicking the button, show/hide the password. ( change ......... to text and vice versa. ) HINT - you need to
+        change the type of input field...........for this question, it works only when the cursor is outside of the
+        input field, when cursor inside its yellow, how to change that?
+    </p>
+
+    <input type="password" id="input_password" max="30" /> <span id="tweet_count"> 30</span>
+    <button id="btn-submit" disabled>Submit</button>
+
+
+    <script>
+        const inputPassword = document.querySelector('#input_password')
+        const btnSubmit = document.querySelector('#btn-submit')
+        const tweetCount = document.querySelector('#tweet_count')
+
+      inputPassword.addEventListener('input', (e) =>{
+        
+        var charCount = 30 - e.target.value.length
+
+        if(charCount > 10){
+            inputPassword.style.border = "2px solid green"
+            tweetCount.style.color = "green";
+        }else if(charCount > 10 || charCount > 0){
+            tweetCount.style.color = "orange";
+        }else if(charCount < 0){
+            tweetCount.style.color = "red";
+        }
+
+        tweetCount.innerHTML = charCount
+
+        console.log(e.target.value.length)
+
+
+        if (e.target.value.length>= 1){
+          btnSubmit.disabled = false
+        }else{
+            btnSubmit.disabled = true
+        }
+        
+      })
+
+
+    </script>
+</body>
+
+</html>

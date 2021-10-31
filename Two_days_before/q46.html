@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>// The question Pranshu asked was that the user will not be able to
+        // add more characters after a certain limit has been reached(deleting
+        // characters is still possible).He asked Saksham to disable the button
+        // when the text area is empty and enable it when something is typed.
+
+        // As an extension of this, you can also cover the edge case that the
+        // button should remain disabled if there are only spaces in the text area.</p>
+
+    <input type="text" max="20" id="input_field" />
+    <button id="btn-submit">Submit</button>
+
+    <script>
+
+        const inputField = document.querySelector('#input_field')
+        const btnSubmit = document.querySelector('#btn-submit')
+
+        inputField.addEventListener('input', (e) => {
+            getWhiteSpace(e.target.value)
+        })
+
+        function getWhiteSpace(w) {
+
+
+            if(/\s/g.test(w)){
+                btnSubmit.disabled = true
+            }else{
+                btnSubmit.disabled = false
+            }
+        }
+
+    </script>
+</body>
+
+</html>

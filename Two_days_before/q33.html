@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="out"></div>
+    <script>
+
+        var itemsPrice = []
+
+        fetch('https://mock-practice.prakhar10v.repl.co/items')
+            .then((response) => {
+                return response.json()
+            })
+            .then((data) => {
+
+
+                for (item of data) {
+                    itemsPrice.push(item.price)
+
+                }
+
+                var leastPrice = Math.max(...itemsPrice)
+                var showItem = ''
+
+                data.forEach((eachItem) => {
+
+                    if (Number(eachItem.price) == leastPrice) {
+                        var color = "red"
+                    } else {
+                        var color = "green"
+                    }
+
+                    showItem += `<p style="color: ${color};">${eachItem.item}, Price: ${eachItem.price}</p>`
+                    document.querySelector('.out').innerHTML = showItem
+                })
+            })
+    </script>
+</body>
+
+</html>

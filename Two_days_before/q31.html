@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> Create a web app which should have one input field and one button. If the input value is even number then text
+        should be green and if odd, text should be red</p>
+
+    <input type="text" id="input_field" />
+    <button id="btn_check">Check</button>
+    <div class="output"></div>
+    <script>
+
+        const inputField = document.querySelector('#input_field')
+        const btnCheck = document.querySelector('#btn_check')
+        const output = document.querySelector('.output')
+
+        btnCheck.addEventListener('click', (e) => {
+            var inputValue = Number(inputField.value);
+
+            if (inputValue % 2 == 0) {
+                output.style.color = "green"
+                output.innerHTML = "Even Number"
+            } else {
+                output.style.color = "red"
+                output.innerHTML = "Odd Number"
+            }
+        })
+    </script>
+
+</body>
+
+</html>

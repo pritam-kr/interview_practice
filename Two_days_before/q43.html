@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="out"></div>
+
+    <script>
+        fetch('https://www.balldontlie.io/api/v1/players')
+            .then((res) => {
+                return res.json()
+            })
+            .then((data) => {
+                var show = ''
+
+                console.log(data.data)
+
+                data.data.forEach((e, i) => {
+
+                    data.data.sort((a, b) => a.id - b.id);
+
+                    show += `<li>${e.first_name}, ID: ${e.id}`
+                    document.querySelector('.out').innerHTML = show
+                })
+            })
+    </script>
+</body>
+
+</html>

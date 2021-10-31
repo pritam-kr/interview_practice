@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>  //You need to create three input fields and an output field. 
+        // First, two input fields will take numbers as input. The last input field will take the operator as input. // Operators are +, -, × and /. If the third input field value is + then show in the output field the sum of the first input value + second input value. Similarly, if we enter  ×, - and / in the third input field. // Note: Button is not required.  for this question: limit the last input field to take only +,-,× and /. Show error if user gives any other input.</p>
+
+        <input type="text" id="input_numOne" />
+        <input type="text" id="input_numTwo" />
+        <input type="text" id="input_Operator" />
+
+        <div class="output"></div>
+
+    <script>
+
+        const inputNumberOne = document.querySelector('#input_numOne')
+        const inputNumberTwo = document.querySelector('#input_numTwo')
+        const inputOperator = document.querySelector('#input_Operator')
+        const output = document.querySelector('.output')
+
+        inputOperator.addEventListener('input', (e) =>{
+            var numOne = Number(inputNumberOne.value);
+            var numtwo = Number(inputNumberTwo.value);
+
+            if(e.target.value === "+"){
+                output.innerHTML = numOne + numtwo;
+            }else if(e.target.value === "-"){
+                output.innerHTML = numOne - numtwo;
+            }else if(e.target.value === "*"){
+                output.innerHTML = numOne * numtwo;
+            }else if(e.target.value === "/"){
+                output.innerHTML = numOne / numtwo;
+            }else{
+                output.innerHTML = "Please enter valid inpput"
+            }
+        })
+
+    </script>
+</body>
+</html>

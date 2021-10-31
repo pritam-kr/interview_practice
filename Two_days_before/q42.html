@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="password" id="input_password" /> <span class="chance"></span>
+
+    <button id="btn_click">Click</button>
+
+    <div class="output"></div>
+
+    <script>
+
+const inputPassword = document.querySelector('#input_password')
+const btn = document.querySelector('#btn_click')
+const outPut =document.querySelector('.output')
+const chnace = document.querySelector('.chance')
+var count = 3
+
+btn.addEventListener('click', (e) =>{
+    var passwordValue = inputPassword.value;
+
+
+    if(!passwordValue.includes("*")){
+        outPut.innerHTML = "error"
+
+        count--
+
+        chnace.innerHTML = count
+
+        if(count === 0){
+            btn.disabled = true
+           
+            console.log(count)
+        }else{
+            btn.disabled = false
+            
+        }
+
+    }else{
+        outPut.innerHTML = "ok"
+    }
+})
+
+
+    </script>
+</body>
+</html>

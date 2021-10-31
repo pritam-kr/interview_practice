@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p> // Another question: // You have to create a counter.
+        // Create two buttons + and -. On clicking the + button increment the counter. Similarly for -. // Now highlight
+        the counter:
+        // i. If the counter value is multiple of 3 then highlight the counter with Red colour.
+        // ii. If the counter value is multiple of 5 then highlight it with Green colour.
+        // iii. If the counter value is multiple of both 5 and 3 then highlight it with Yellow colour.</p>
+
+    <h1 id="counter_value"></h1>
+    <button>+</button>
+    <button>-</button>
+
+    <script>
+        const counterValue = document.querySelector('#counter_value')
+        const buttons = document.querySelectorAll('button')
+
+        var count = 0
+
+        buttons.forEach((eachBtn) =>{
+            eachBtn.addEventListener('click', (e) =>{
+                getCounter(e.target.innerText)
+            })
+        })
+
+        function getCounter(e){
+            if(e === "+"){
+                count++
+            }else{
+                count--
+            }
+
+            counterValue.innerHTML = count
+
+            buttonDisabled(count)
+        }
+
+        function buttonDisabled(count){
+            // if(count <= 0){
+            //    counterValue.style.color = "red"
+            // }else{
+            //    counterValue.style.color = "green"
+            // }
+
+            if(count % 3 === 0 && count % 5 === 0){
+                counterValue.style.color = "yellow"
+            }else if(count % 3 === 0){
+                counterValue.style.color = "red"
+            }else if(count % 5 === 0){
+                counterValue.style.color = "green"
+            }else{
+                counterValue.style.color = "black"
+            }
+        }
+    </script>
+</body>
+
+</html>

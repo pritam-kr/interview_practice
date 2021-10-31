@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Create a web app which would take two inputs. It would also have 4 buttons: +, -, x /. Based on the button clicked perform the operation on the two inputs. You can do this in React or vanillaJS based on your choice</p>
+
+    <input type="text" id="input_one" />
+    <input type="text" id="input_two" />
+
+    <button>+</button><button>-</button><button>*</button><button>/</button>
+
+    <div class="output"></div>
+
+    <script>
+        const btns = document.querySelectorAll('button')
+        const inputOne = document.querySelector('#input_one')
+        const inputTwo = document.querySelector('#input_two')
+
+        btns.forEach((eachBtn) =>{
+            eachBtn.addEventListener('click', (e) =>{
+                getCalculation(e.target.innerText)
+            })
+        })
+
+        function getCalculation(e){
+            if(e === "+"){
+                var solution = Number(inputOne.value) + Number(inputTwo.value)
+            }else if(e === "-"){
+                var solution = Number(inputOne.value) - Number(inputTwo.value)
+            }else if(e === "*"){
+                var solution = Number(inputOne.value) * Number(inputTwo.value)
+            }else{
+                var solution = Number(inputOne.value) / Number(inputTwo.value)
+            }
+
+            document.querySelector('.output').innerHTML = solution
+
+        }
+    </script>
+</body>
+</html>

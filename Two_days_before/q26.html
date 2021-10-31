@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>create a div and three buttons having innertext as left align,center align and right align . in clicking any of
+        the button the text insode of that div should become as the text of the button and should do the task that the
+        inner text of the button says</p>
+
+    <div class="output"></div>
+    <button>Center</button>
+    <button>Left</button>
+    <button>Right</button>
+
+    <script>
+        const outPut = document.querySelector('.output')
+        const btns = document.querySelectorAll('button')
+
+        btns.forEach((eachBtn) => {
+            eachBtn.addEventListener('click', (e) => {
+
+                getOutPutText(e.target.innerText)
+
+            })
+        })
+
+        function getOutPutText(e) {
+
+            outPut.style.textAlign = e
+            outPut.innerHTML = e
+        }
+    </script>
+</body>
+
+</html>

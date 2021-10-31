@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Create a web app where I can input a text. Now create two buttons + and -. On clicking + increase the fontSize by 2px and vice versa.</p>
+
+    <input type="text" id="input_field" /> 
+    <button>+</button>
+    <button>-</button>
+    <div class="output"></div>
+
+    <script>
+        const inputField = document.querySelector('#input_field')
+        const btns = document.querySelectorAll('button')
+        const output = document.querySelector('.output')
+        var size = 16
+
+        btns.forEach((eachBtn) =>{
+            eachBtn.addEventListener('click', (e) =>{
+                getFontsize(e.target.innerText)
+            })
+        })
+
+        function getFontsize(s){
+            if(s === "+"){
+                size = size + 2
+            }else{
+                size = size - 2
+            }
+
+            output.style.fontSize = size + "px"
+            output.innerHTML = inputField.value;
+        }
+    </script>
+</body>
+</html>

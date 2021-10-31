@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="input_field" value="1"/>
+    <button id="btn-click">Click</button>
+
+    <script>
+        const btnClick = document.querySelector('#btn-click')
+        const inputField = document.querySelector('#input_field')
+        var count = 1
+        btnClick.addEventListener('dblclick', () =>{
+
+            if(!Number(inputField.value)){
+                inputField.value = 1
+            }else{
+                count = count + count;
+                inputField.value = count
+            }
+
+        })
+    </script>
+</body>
+</html>

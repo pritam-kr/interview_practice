@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* #one {
+            color: blue;
+        }
+
+        #two {
+            color: red;
+        } */
+    </style>
+
+</head>
+
+<body>
+
+    <button id="one">Shubham</button>
+    <button id="two">Rahul</button>
+
+    <div class="out"></div>
+
+    <script>
+
+        const btnFirst = document.querySelector('#one')
+        const btnSecond = document.querySelector('#two')
+        // setInterval(colorChange, 1000)
+
+        // btnFirst.style.color = "red"
+        // btnSecond.style.color = "blue"
+
+        // var colorOne = btnFirst.style.color
+        // var colorTwo = btnSecond.style.color
+
+        // function colorChange() {
+
+        //     if (btnFirst.style.color === "red") {
+        //         btnFirst.style.color = colorTwo
+        //         btnSecond.style.color = colorOne
+        //     } else {
+        //         btnFirst.style.color = colorOne
+        //         btnSecond.style.color = colorTwo
+        //     }
+        // }
+
+        function getSecond() {
+
+            const d = new Date()
+            var second = d.getSeconds()
+            if(second % 2 === 0){
+                btnFirst.style.color = "red"
+                btnSecond.style.color = "blue"
+            }else{
+                btnFirst.style.color = "blue"
+                btnSecond.style.color = "red"
+            }
+
+            setTimeout(getSecond, 1000)
+
+        }
+
+        getSecond()
+    </script>
+</body>
+
+</html>

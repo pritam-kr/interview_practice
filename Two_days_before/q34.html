@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> Create two objects with name, power, and yuga as Ram, 2500, Treta. Krishna, 2325, Dwapar. Say if every character in name is worth 35 power points. Write a function which takes two objects and return the person with more power based on their name and power both.
+    </p>
+
+    <script>
+        const personOne = {
+            name: "Ram",
+            power: 2500,
+            yuga: "Treta"
+        }
+        const personTwo = {
+            name: "Krishna",
+            power: 2325,
+            yuga: "Dwapar"
+        }
+
+        function checkPower(one, two){
+            if(one.name.length * 35 > two.name.length*35){
+                return one
+            }else{
+                return two
+            }
+        }
+
+        const check = checkPower(personOne, personTwo)
+
+        console.log(check)
+    </script>
+</body>
+</html>
