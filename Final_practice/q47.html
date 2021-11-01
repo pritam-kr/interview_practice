@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Create a web app where I can input a text. Now, If the number of characters is divisible by 3 the text color should change to red.</p>
+
+    <input type="text" id="input_field" />
+
+    <script>
+        const inputField = document.querySelector('#input_field')
+
+        inputField.addEventListener('input', (e) =>{
+            if(e.target.value.length % 3 === 0){
+                inputField.style.color = "red"
+            }else{
+                inputField.style.color = "green"
+            }
+        })
+    </script>
+</body>
+</html>

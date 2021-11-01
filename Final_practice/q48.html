@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Create a counter with two buttons + and -. On clicking these buttons the number should increment and decrement respectively from the given value. Show error when you give any input other than number.</p>
+
+    
+    <button>+</button>
+    <button>-</button>
+
+    <div class="output"></div>
+
+    <script>
+        var count = 0
+        const buttons = document.querySelectorAll('button')
+
+        buttons.forEach((eachBtn) =>{
+            eachBtn.addEventListener('click', (e) =>{
+
+                getCounterValue(e.target.textContent)
+            })
+        })
+
+        function getCounterValue(c){
+           
+            if(c === "+"){
+                count++
+            }else{
+                count--
+
+                if(count <= 0){
+                    buttons[1].disabled = true
+                }else{
+                    buttons[1].disabled = false 
+                }
+            }
+
+            document.querySelector('.output').innerHTML = count
+
+        }
+    </script>
+
+</body>
+</html>
