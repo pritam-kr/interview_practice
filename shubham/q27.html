@@ -29,7 +29,7 @@
             if(e.target.value.includes('/\s/g') || (e.target.value === '')){
                 btnSubmit.setAttribute('disabled', true)
             }else if(e.target.value.length>0){
-                btnSubmit.removeAttribute('disabled')
+                btnSubmit.removeAttribute('disabled', false)
             }
             
         })
